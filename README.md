@@ -158,31 +158,31 @@ cd 'C:\Program Files\Winlogbeat'
 # Only needed the first time
 PowerShell.exe -ExecutionPolicy UnRestricted -File .\install-service-winlogbeat.ps1
 ```
-		
+	
 5. Test the configuration:
-	    
+    
 ```powershell
 .\winlogbeat.exe test config -c .\winlogbeat.yml
-	   ```
-	   
+```
+   
 6. Test the output connections:
 
 ```powershell
 .\winlogbeat.exe test output -c .\winlogbeat.yml
-	   ```
-	   
+ ```
+  
 7. Start the Winlogbeat service:
 	
 ```powershell
 Start-Service winlogbeat
-	   ```
-	   
+```
+  
 8. Check the service status:
-	   
+   
 ```powershell
 Get-Service winlogbeat
 ```
-	   
+  
 ### Example Configuration Highlights
 
 ```yaml
