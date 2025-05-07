@@ -1,0 +1,15 @@
+http.host: "0.0.0.0"
+xpack.monitoring.elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+
+# Pipeline settings
+pipeline.ordered: auto
+pipeline.workers: 2  # Number of worker threads (adjust based on CPU cores)
+pipeline.batch.size: 125  # Number of events to process as a batch
+pipeline.batch.delay: 50  # Delay in milliseconds to wait for additional events
+
+# Queue settings
+queue.type: memory  # Options: memory (default) or persisted
+queue.max_bytes: 1024mb  # Maximum size of the internal queue
+
+# Log level (options: error, warn, info, debug, trace)
+log.level: info

@@ -1,0 +1,5 @@
+# Save as jvm.options locally
+-Xms1g
+-Xmx1g
+-XX:+UseG1GC
+-Djava.io.tmpdir=/tmp
