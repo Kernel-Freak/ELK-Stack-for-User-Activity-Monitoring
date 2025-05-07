@@ -275,7 +275,7 @@ docker-compose logs -f logstash
 docker-compose down && docker-compose up -d
 ```
 
-3 View Winlogbeat logs (Windows)
+3. View Winlogbeat logs (Windows)
 ```powershell
 Get-Content "C:\Program Files\Winlogbeat\logs\winlogbeat.log" -Tail 50 -Wait
 ```
@@ -296,7 +296,7 @@ Get-Content "C:\Program Files\Winlogbeat\logs\winlogbeat.log" -Tail 50 -Wait
 
 * [Elastic Winlogbeat Docs](https://www.elastic.co/guide/en/beats/winlogbeat/current/index.html)
 * [Sysmon Event IDs](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
-* [Windows Security Event IDs](https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-audit)
+* [Windows Security Event IDs](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)
 
 ---
 
