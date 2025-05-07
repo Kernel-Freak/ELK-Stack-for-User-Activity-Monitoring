@@ -17,7 +17,7 @@ This project sets up an **ELK Stack (Elasticsearch, Logstash, Kibana)** using Do
 
 ## 📁 Project Setup
 
-** In Linux Machine **
+**In Linux Machine**
 
 ```bash
 ELK-Stack/
@@ -31,7 +31,7 @@ ELK-Stack/
         └── logstash.conf		
 ```
 
-** In Windows Machine **
+**In Windows Machine**
 
 ```powershell
 Winlogbeat.yml (in windows)
