@@ -133,54 +133,55 @@ winlogbeat.event_logs:
 
 ## 🔧 Configure Winlogbeat on Windows
 
-	1. Download [Winlogbeat](https://www.elastic.co/beats/winlogbeat) on the Windows machine you want to monitor.
+1. Download [Winlogbeat](https://www.elastic.co/beats/winlogbeat) on the Windows machine you want to monitor.
 
-	2. Extract the package:
-	   * Extract the zip file to `C:\Program Files\Winlogbeat`
+2. Extract the package:
+   * Extract the zip file to `C:\Program Files\Winlogbeat`
 	
-	3. Replace the configuration:
-	   * Save the enhanced configuration I provided as `C:\Program Files\Winlogbeat\winlogbeat.yml` 
+3. Replace the configuration:
+   * Save the enhanced configuration I provided as `C:\Program Files\Winlogbeat\winlogbeat.yml` 
 	   
-	   > 💡 Tip: Change the ip address as per you Configuration
+> 💡 Tip: Change the ip address as per you Configuration
 	   
-	4. Install Winlogbeat as a service:
+4. Install Winlogbeat as a service:
 
-       * Open PowerShell as Administrator
-       * Navigate to the Winlogbeat directory  
+   * Open PowerShell as Administrator
+   * Navigate to the Winlogbeat directory 
+	 
+```powershell
+cd 'C:\Program Files\Winlogbeat'
+```
 
-		```powershell
-		cd 'C:\Program Files\Winlogbeat'
-		```
+   * Run the installation script:
+
+```powershell
+# Only needed the first time
+PowerShell.exe -ExecutionPolicy UnRestricted -File .\install-service-winlogbeat.ps1
+```
 		
-		* Run the installation script:
-		```powershell
-		# Only needed the first time
-		PowerShell.exe -ExecutionPolicy UnRestricted -File .\install-service-winlogbeat.ps1
-		```
-		
-	5. Test the configuration:
+5. Test the configuration:
 	    
-	   ```powershell
-	   .\winlogbeat.exe test config -c .\winlogbeat.yml
+```powershell
+.\winlogbeat.exe test config -c .\winlogbeat.yml
 	   ```
 	   
-	6. Test the output connections:
+6. Test the output connections:
+
+```powershell
+.\winlogbeat.exe test output -c .\winlogbeat.yml
+	   ```
+	   
+7. Start the Winlogbeat service:
 	
-	   ```powershell
-	   .\winlogbeat.exe test output -c .\winlogbeat.yml
+```powershell
+Start-Service winlogbeat
 	   ```
 	   
-	7. Start the Winlogbeat service:
-	
-	   ```powershell
-	   Start-Service winlogbeat
-	   ```
+8. Check the service status:
 	   
-	8. Check the service status:
-	   
-	   ```powershell
-	   Get-Service winlogbeat
-	   ```
+```powershell
+Get-Service winlogbeat
+```
 	   
 ### Example Configuration Highlights
 
